@@ -1,0 +1,14 @@
+
+{% extends "layout.html" %}
+{% block content %}
+    <h2>{{ category.name }}</h2>
+    <p>{{ category.description }}</p>
+    {% for package in category.packages %}
+        <div class="package">
+            <h3>{{ package.name }}</h3>
+            <p>{{ package.description }}</p>
+            <p>Ár: {{ package.price | currency(store.currency) }}</p>
+            <a href="{{ package.url }}" class="btn">Megvásárolom</a>
+        </div>
+    {% endfor %}
+{% endblock %}

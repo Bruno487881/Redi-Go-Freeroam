@@ -1,0 +1,13 @@
+
+{% extends "layout.html" %}
+{% block content %}
+    <div class="package">
+        <h2>{{ package.name }}</h2>
+        <p>{{ package.description }}</p>
+        <p>Ár: {{ package.price | currency(store.currency) }}</p>
+        <form method="post">
+            {{ username_input }}
+            <button type="submit" class="btn">Megvásárolom</button>
+        </form>
+    </div>
+{% endblock %}
